@@ -17,6 +17,8 @@ Options:
 -w, --wayland  Uses wl-copy instead of xclip, note that xclip works
                on some applications when using Wayland too
 
+-n, --no-notification Disables the notification if it is annoying
+
 Note: This script requires the following programs:
       find, fzf, tar, curl, xclip or wl-clipboard"
 }
@@ -24,6 +26,7 @@ Note: This script requires the following programs:
 compress=false
 url="0x0.st"
 copy="xclip -selection clipboard"
+notification=true
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -43,6 +46,10 @@ while [[ "$#" -gt 0 ]]; do
         -w|--wayland)
             copy="wl-copy"
 	        ;;
+        -n|--no-notification)
+            notification=false
+	        ;;
+
         *)
             # Check if the argument is an option (starts with '-')
             if [[ "$1" == -* ]]; then
@@ -77,4 +84,6 @@ echo ""
 echo $link
 echo "$link" | $copy
 
-notify-send "$link Has been copied to the clipboard."
+if [ "$notification" = true ]; then
+    notify-send "$link Has been copied to the clipboard."
+fi
