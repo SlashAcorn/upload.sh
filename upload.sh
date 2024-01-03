@@ -1,7 +1,5 @@
 #! /bin/sh
 
-#!/bin/bash
-
 show_help() {
     echo "Usage: upload [OPTIONS]
 Options:
