@@ -1,5 +1,9 @@
 # upload.sh
 ### a silly shell script I wrote that allows you to search your filesystem with fzf and upload a file using curl, for example to 0x0.st or temp.sh
+
+https://github.com/SlashAcorn/upload.sh/assets/88128906/b9fa182d-3939-421d-b543-b639baf37235
+
+---
 ```
 Usage: upload [OPTIONS]
 Options:
