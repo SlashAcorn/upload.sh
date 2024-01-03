@@ -66,5 +66,7 @@ else
     uploadfile=$(find "$HOME" -type f | fzf +i -e)
 fi
 
-curl -F "file=@$uploadfile" $url | $copy
-notify-send "The link to your file has been copied to the clipboard."
+if [ -z "$uploadfile" ]; then
+    echo "No file was chosen, exiting"
+    exit 1
+fi
