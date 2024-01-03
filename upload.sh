@@ -60,11 +60,11 @@ done
 # ...
 
 if [ "$compress" = true ]; then
-    file=$(find "$HOME" -type f,d | fzf +i -e)
+    file=$(find "$HOME" -type f,d 2> /dev/null | fzf +i -e)
     tar -cJf "/tmp/archive.tar.xz" -C "$(dirname "$file")" "$(basename "$file")"
     uploadfile="/tmp/archive.tar.xz"
 else
-    uploadfile=$(find "$HOME" -type f | fzf +i -e)
+    uploadfile=$(find "$HOME" -type f 2> /dev/null | fzf +i -e)
 fi
 
 if [ -z "$uploadfile" ]; then
