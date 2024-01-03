@@ -15,7 +15,7 @@ Options:
                use anything other than 0x0.st and temp.sh
 
 -w  --wayland  Uses wl-copy instead of xclip, note that xclip works
-               on Wayland too
+               on some applications when using Wayland too
 
 Note: This script requires the following programs:
       find, fzf, tar, curl, xclip or wl-clipboard
