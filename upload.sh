@@ -13,6 +13,7 @@ Options:
 
 -u  --url      Uses specified url to upload files to if you want to
                use anything other than 0x0.st and temp.sh
+
 -w  --wayland  Uses wl-copy instead of xclip, note that xclip works
                on Wayland too
 
