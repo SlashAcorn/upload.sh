@@ -22,7 +22,7 @@ Note: This script requires the following programs:
 
 compress=false
 url="0x0.st"
-copy="xclip -selection c"
+copy="xclip -selection clipboard"
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -70,3 +70,10 @@ if [ -z "$uploadfile" ]; then
     echo "No file was chosen, exiting"
     exit 1
 fi
+
+link=$(curl -w "\n" -F "file=@$uploadfile" "$url")
+echo ""
+echo $link
+echo "$link" | $copy
+
+notify-send "$link Has been copied to the clipboard."
