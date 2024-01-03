@@ -58,12 +58,12 @@ done
 # Add your script logic below this line
 # ...
 
-if $compress; then
-    file=$(find $HOME -type f,d | fzf +i -e)
+if [ "$compress" = true ]; then
+    file=$(find "$HOME" -type f,d | fzf +i -e)
     tar -cJf "/tmp/archive.tar.xz" -C "$(dirname "$file")" "$(basename "$file")"
     uploadfile="/tmp/archive.tar.xz"
 else
-    uploadfile=$(find $HOME -type f | fzf +i -e)
+    uploadfile=$(find "$HOME" -type f | fzf +i -e)
 fi
 
 curl -F "file=@$uploadfile" $url | $copy
