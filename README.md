@@ -5,17 +5,19 @@ Usage: upload [OPTIONS]
 Options:
 -h, --help     Show this help message
 
--c  --compress Compress file and upload it, allows for directories
+-c, --compress Compress file and upload it, allows for directories
                to be uploaded
 
--t  --temp     Uses https://temp.sh instead of https://0x0.st,
+-t, --temp     Uses https://temp.sh instead of https://0x0.st,
                allows for larger files but only lasts 3 days
 
--u  --url      Uses specified url to upload files to if you want to
+-u, --url      Uses specified url to upload files to if you want to
                use anything other than 0x0.st and temp.sh
 
--w  --wayland  Uses wl-copy instead of xclip, note that xclip works
+-w, --wayland  Uses wl-copy instead of xclip, note that xclip works
                on some applications when using Wayland too
+
+-n, --no-notification Disables the notification if it is annoying
 
 Note: This script requires the following programs:
       find, fzf, tar, curl, xclip or wl-clipboard
